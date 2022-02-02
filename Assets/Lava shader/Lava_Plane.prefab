@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 64000010023487524}
   - component: {fileID: 23000010815554416}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Lava_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

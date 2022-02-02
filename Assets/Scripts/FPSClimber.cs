@@ -1,8 +1,9 @@
 ﻿using ECM2.Characters;
+using ECM2.Examples.Gameplay.LadderClimbExample;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ECM2.Examples.Gameplay.LadderClimbExample
+namespace EscapingLava.FPSClimber
 {
     /// <summary>
     /// The Character's current custom movement mode.
@@ -31,7 +32,7 @@ namespace ECM2.Examples.Gameplay.LadderClimbExample
     /// In this case, we add a ladder climb movement mode with different states for this Climbing movement mode.
     /// </summary>
 
-    public class MyCharacter : FirstPersonCharacter
+    public class FPSClimber : FirstPersonCharacter
     {
         #region EDITOR EXPOSED FIELDS
 
@@ -263,6 +264,7 @@ namespace ECM2.Examples.Gameplay.LadderClimbExample
         /// Apply a custom movement mode, in this case ladder climbing.
         /// Eg: Moving up / down along a ladder path.
         /// </summary>
+
 
         protected override void OnCustomMovementMode(Vector3 desiredVelocity)
         {
