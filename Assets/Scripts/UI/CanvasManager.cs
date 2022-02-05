@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using ECM2.Components;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,8 +13,9 @@ public class CanvasManager : MonoBehaviour
     static Menu escMenu;
     static Menu goalMenu;
 
-    GameObject playerController;
-    CharacterLook character;
+    [SerializeField] GameObject playerController;
+    static Rigidbody rb;
+    static CharacterLook character;
 
     public MenuActions menuControls;
     private InputAction pause;
@@ -25,17 +24,20 @@ public class CanvasManager : MonoBehaviour
     
     private void Awake()
     {
+        Instance = this;
+
         escMenu = transform.GetChild(0).GetComponent<Menu>();
         gameOverMenu = transform.GetChild(1).GetComponent<Menu>();
         goalMenu = transform.GetChild(2).GetComponent<Menu>();
+
+        character = (CharacterLook)playerController.GetComponent("CharacterLook");
+        rb = playerController.GetComponent<Rigidbody>();
         
         menuControls = new MenuActions();
-        Instance = this;
     }
 
     private void OnEnable()
     {
-        
         pause = menuControls.Buttons.Pause;
         pause.Enable();
         pause.performed += Pause;
@@ -44,11 +46,6 @@ public class CanvasManager : MonoBehaviour
     private void OnDisable()
     {
         pause.Disable();
-    }
-
-    void Update()
-    {
-        
     }
 
     private void Pause(InputAction.CallbackContext context)
@@ -88,16 +85,14 @@ public class CanvasManager : MonoBehaviour
 
     public void FreezeCharacter()
     {
-        playerController = GameObject.Find("First Person Character");
-        character = (CharacterLook)playerController.GetComponent("CharacterLook");
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
         character.mouseHorizontalSensitivity = 0;
         character.mouseVerticalSensitivity = 0;
     }
 
     public void UnFreezeCharacter()
     {
-        playerController = GameObject.Find("First Person Character");
-        character = (CharacterLook)playerController.GetComponent("CharacterLook");
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         character.mouseHorizontalSensitivity = (float) 0.1;
         character.mouseVerticalSensitivity = (float) 0.1;
     }
