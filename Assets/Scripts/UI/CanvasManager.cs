@@ -85,7 +85,7 @@ public class CanvasManager : MonoBehaviour
 
     public void FreezeCharacter()
     {
-        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
         character.mouseHorizontalSensitivity = 0;
         character.mouseVerticalSensitivity = 0;
     }
