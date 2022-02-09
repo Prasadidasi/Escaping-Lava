@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.15856144, g: 0.08232602, b: 0.08133636, a: 1}
+  m_IndirectSpecularColor: {r: 0.1569762, g: 0.07929192, b: 0.08068607, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3565,6 +3565,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 203818482638454871, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818483553089126, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818483641047554, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818483887836586, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484018655664, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484042789500, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484143685269, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484147759022, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484171338325, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484271239651, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484367284296, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484429945860, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484571570348, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484644930913, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203818484648226101, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4425169388598610998, guid: 57e1ab53d6dbff7498efa41391608109, type: 3}
       propertyPath: m_Name
       value: Lava

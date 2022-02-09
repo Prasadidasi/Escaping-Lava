@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     public static Timer Instance;
 
     [SerializeField] TMP_Text timeInt;
+    [SerializeField] TMP_Text colon;
 
     public float timeLeft = 300;
 
@@ -28,31 +29,38 @@ public class Timer : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        if(timeLeft > 0) 
+        if(timeLeft > 0) //tid kvar
         {
-            timeLeft -= Time.fixedDeltaTime;
+            timeLeft -= Time.fixedDeltaTime; //minska tid
 
-            if(timeLeft < 60 ) 
+            if(timeLeft > 60 ) 
             {
-                timeInt.color = Color.red;
-                timeInt.text = "00" + (int)timeLeft / 60 + ":" + (int)timeLeft % 60;
+                timeInt.text = "0" + (int)timeLeft / 60 +"  "+ (int)timeLeft % 60;
 
-                if(timeLeft < 60 && timeLeft % 60 < 10) timeInt.text = "00" + (int)timeLeft / 60 + ":0" + (int)timeLeft % 60;
+                if(timeLeft % 60 < 10 ) timeInt.text = "0" + (int)timeLeft / 60 +"  0"+(int)timeLeft % 60;
+
                 return;
             }
 
-            if(timeLeft % 60 < 10) timeInt.text = "" + (int)timeLeft / 60 + ":0" + (int)timeLeft % 60;
+            if(timeLeft < 60 ) // 00:xx
+            {
+                timeInt.color = Color.red;
+                colon.color = Color.red;
 
-            else timeInt.text = "0" + (int)timeLeft / 60 + ":" + (int)timeLeft % 60;
-            return;
+                timeInt.text = "00  " + (int)timeLeft;
+
+                if(timeLeft < 10) timeInt.text = "00  0" + (int)timeLeft;
+                
+                return;
+            }
+
+            
         }
 
         if(timeLeft <= 0)
         {
             canvasManager.OpenGameOverMenu();
         }
-        
-
 
     }
 }
