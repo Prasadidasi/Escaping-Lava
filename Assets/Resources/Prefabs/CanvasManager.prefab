@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: startButton
-  open: 1
+  open: 0
 --- !u!1 &5076976055644870844
 GameObject:
   m_ObjectHideFlags: 0

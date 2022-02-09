@@ -32,8 +32,14 @@ public class Timer : MonoBehaviour
         {
             timeLeft -= Time.fixedDeltaTime;
 
-            if(timeLeft < 60 ) timeInt.color = Color.red; 
-            
+            if(timeLeft < 60 ) 
+            {
+                timeInt.color = Color.red;
+                timeInt.text = "00" + (int)timeLeft / 60 + ":" + (int)timeLeft % 60;
+
+                if(timeLeft < 60 && timeLeft % 60 < 10) timeInt.text = "00" + (int)timeLeft / 60 + ":0" + (int)timeLeft % 60;
+                return;
+            }
 
             if(timeLeft % 60 < 10) timeInt.text = "" + (int)timeLeft / 60 + ":0" + (int)timeLeft % 60;
 

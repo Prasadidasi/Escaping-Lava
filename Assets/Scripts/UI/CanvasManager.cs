@@ -48,28 +48,14 @@ public class CanvasManager : MonoBehaviour
         
         menuControls = new MenuActions();
         PauseGame();
+        StartGame();
     }
 
     void FixedUpdate()
     {
         if(!startCountDown) return;
         
-        countDownTimer -= Time.fixedDeltaTime;
-
-        if(countDownTimer > 0) 
-        {
-            countDownText.text = "" + (int)countDownTimer;
-        }
-
-        else if(countDownTimer <= 0)
-        {
-            startCountDown = false;
-            countDown.Close();
-            timer.gameStarted = true;
-            timer.gameObject.SetActive(true);
-            ResumeGame();
-        }
-    
+        CountDown();
     }
 
     private void OnEnable()
@@ -111,12 +97,14 @@ public class CanvasManager : MonoBehaviour
     {
         FreezeCharacter();
         Time.timeScale = 0;
+        Cursor.visible = true;
     }
 
     public void ResumeGame ()
     {
         UnFreezeCharacter();
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     public void FreezeCharacter()
@@ -135,6 +123,8 @@ public class CanvasManager : MonoBehaviour
 
     public void LeaveGame()
     {
+        Cursor.visible = true;
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
     
@@ -151,16 +141,34 @@ public class CanvasManager : MonoBehaviour
 
     public void OpenGameOverMenu()
     {
-        PauseGame();
+        FreezeCharacter();
         gameOverMenu.Open();
     }
 
     public void StartGame()
     {
-        startButton.Close();
         Time.timeScale = 1;
         countDown.Open();
         startCountDown = true;       
+    }
+
+    public void CountDown()
+    {
+        countDownTimer -= Time.fixedDeltaTime;
+
+        if(countDownTimer > 1) 
+        {
+            countDownText.text = "" + (int)countDownTimer;
+        }
+
+        else if(countDownTimer <= 1)
+        {
+            startCountDown = false;
+            countDown.Close();
+            timer.gameStarted = true;
+            timer.gameObject.SetActive(true);
+            ResumeGame();
+        }
     }
 
 }
