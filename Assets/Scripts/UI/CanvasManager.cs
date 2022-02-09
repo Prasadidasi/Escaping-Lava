@@ -149,11 +149,13 @@ public class CanvasManager : MonoBehaviour
     public void OpenGameOverMenu()
     {
         FreezeCharacter();
+        Cursor.visible = true;
         gameOverMenu.Open();
     }
 
     public void StartGame()
     {
+        Cursor.visible = false;
         Time.timeScale = 1;
         countDown.Open();
         startCountDown = true;       
