@@ -2,6 +2,7 @@ using ECM2.Components;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -9,9 +10,16 @@ public class CanvasManager : MonoBehaviour
 
     [SerializeField] int levelNumber;
 
+    
+    public TMP_Text countDownText;
+    public float countDownTimer = 6;
+    
     static Menu gameOverMenu;
     static Menu escMenu;
     static Menu goalMenu;
+    static Menu startButton;
+    static Menu countDown;
+    static Timer timer;
 
     [SerializeField] GameObject playerController;
     static Rigidbody rb;
@@ -21,6 +29,8 @@ public class CanvasManager : MonoBehaviour
     private InputAction pause;
     private InputAction click;
 
+    bool startCountDown = false;
+
     
     private void Awake()
     {
@@ -29,11 +39,37 @@ public class CanvasManager : MonoBehaviour
         escMenu = transform.GetChild(0).GetComponent<Menu>();
         gameOverMenu = transform.GetChild(1).GetComponent<Menu>();
         goalMenu = transform.GetChild(2).GetComponent<Menu>();
+        startButton = transform.GetChild(3).GetComponent<Menu>();
+        timer = transform.GetChild(4).GetComponent<Timer>();
+        countDown = transform.GetChild(5).GetComponent<Menu>(); 
 
         character = (CharacterLook)playerController.GetComponent("CharacterLook");
         rb = playerController.GetComponent<Rigidbody>();
         
         menuControls = new MenuActions();
+        PauseGame();
+    }
+
+    void FixedUpdate()
+    {
+        if(!startCountDown) return;
+        
+        countDownTimer -= Time.fixedDeltaTime;
+
+        if(countDownTimer > 0) 
+        {
+            countDownText.text = "" + (int)countDownTimer;
+        }
+
+        else if(countDownTimer <= 0)
+        {
+            startCountDown = false;
+            countDown.Close();
+            timer.gameStarted = true;
+            timer.gameObject.SetActive(true);
+            ResumeGame();
+        }
+    
     }
 
     private void OnEnable()
@@ -50,7 +86,7 @@ public class CanvasManager : MonoBehaviour
 
     private void Pause(InputAction.CallbackContext context)
     {
-        if (!escMenu.open && !gameOverMenu.open && !goalMenu.open) OpenEscMenu(); 
+        if (!escMenu.open && !gameOverMenu.open && !goalMenu.open && !startButton.open && !countDown.open) OpenEscMenu(); 
         else if (escMenu.open) CloseEscMenu();
     }
 
@@ -74,13 +110,13 @@ public class CanvasManager : MonoBehaviour
     public void PauseGame ()
     {
         FreezeCharacter();
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
     }
 
     public void ResumeGame ()
     {
         UnFreezeCharacter();
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 
     public void FreezeCharacter()
@@ -106,4 +142,25 @@ public class CanvasManager : MonoBehaviour
     {
         SceneManager.LoadScene(levelNumber+1);
     }
+
+    public void LevelComplete()
+    {
+        PauseGame();
+        goalMenu.Open();
+    }
+
+    public void OpenGameOverMenu()
+    {
+        PauseGame();
+        gameOverMenu.Open();
+    }
+
+    public void StartGame()
+    {
+        startButton.Close();
+        Time.timeScale = 1;
+        countDown.Open();
+        startCountDown = true;       
+    }
+
 }

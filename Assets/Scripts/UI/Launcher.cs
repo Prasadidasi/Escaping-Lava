@@ -16,6 +16,7 @@ public class Launcher : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        MenuManager.Instance.OpenMenu("loading");
     }
 
     void Start()
