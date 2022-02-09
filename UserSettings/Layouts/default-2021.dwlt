@@ -21,9 +21,15 @@ MonoBehaviour:
   m_ShowMode: 4
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Title: Game
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 350}
+=======
+  m_Title: Scene
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> Stashed changes
 =======
   m_Title: Scene
   m_RootView: {fileID: 6}
@@ -44,6 +50,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_EditorHideFlags: 0
@@ -77,6 +84,8 @@ MonoBehaviour:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   m_EditorHideFlags: 1
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -95,8 +104,13 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 74
 --- !u!114 &4
+=======
+  controlID: 99
+--- !u!114 &3
+>>>>>>> Stashed changes
 =======
   controlID: 99
 --- !u!114 &3
@@ -149,8 +163,13 @@ MonoBehaviour:
     y: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     width: 260
     height: 669
+=======
+    width: 302
+    height: 454
+>>>>>>> Stashed changes
 =======
     width: 302
     height: 454
@@ -290,8 +309,13 @@ MonoBehaviour:
   vertical: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 75
 --- !u!114 &11
+=======
+  controlID: 100
+--- !u!114 &10
+>>>>>>> Stashed changes
 =======
   controlID: 100
 --- !u!114 &10
@@ -325,8 +349,11 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 47
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   controlID: 101
@@ -358,6 +385,9 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -404,7 +434,11 @@ MonoBehaviour:
     m_Folders:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     - Assets/Scenes
+=======
+    - Assets/AssetStore/LowpolyStreetPack/Prefabs/StreetProps/Overpass
+>>>>>>> Stashed changes
 =======
     - Assets/AssetStore/LowpolyStreetPack/Prefabs/StreetProps/Overpass
 >>>>>>> Stashed changes
@@ -418,7 +452,11 @@ MonoBehaviour:
   m_LastFolders:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - Assets/Scenes
+=======
+  - Assets/AssetStore/LowpolyStreetPack/Prefabs/StreetProps/Overpass
+>>>>>>> Stashed changes
 =======
   - Assets/AssetStore/LowpolyStreetPack/Prefabs/StreetProps/Overpass
 >>>>>>> Stashed changes
@@ -433,6 +471,7 @@ MonoBehaviour:
   m_FolderTreeState:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 231}
     m_SelectedIDs: 60560000
     m_LastClickedID: 22112
@@ -440,11 +479,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     scrollPos: {x: 0, y: 207}
     m_SelectedIDs: 36d00000
     m_LastClickedID: 53302
     m_ExpandedIDs: 000000002e68000030680000326800003468000036680000386800003a6800003c6800003e680000406800004268000044680000466800004a6800004c6800004e680000606800000cd0000022d0000028d0000004d1000000ca9a3b
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -477,7 +521,11 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000e4550000e6550000e8550000ea550000ec550000ee550000f0550000f2550000f4550000f6550000f8550000fa550000fc550000fe55000000560000025600000456000006560000085600000a5600000c5600000e560000
+=======
+    m_ExpandedIDs: 000000002e68000030680000326800003468000036680000386800003a6800003c6800003e68000040680000426800004468000046680000486800004a6800004c6800004e680000
+>>>>>>> Stashed changes
 =======
     m_ExpandedIDs: 000000002e68000030680000326800003468000036680000386800003a6800003c6800003e68000040680000426800004468000046680000486800004a6800004c6800004e680000
 >>>>>>> Stashed changes
@@ -612,6 +660,7 @@ MonoBehaviour:
     m_TreeViewState:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
@@ -619,11 +668,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       scrollPos: {x: 0, y: 6508}
       m_SelectedIDs: 7473ffff
       m_LastClickedID: -35980
       m_ExpandedIDs: ee54ffff0062ffffb666ffffd269ffffc06fffff7473ffffdc78ffffce9cffff109effff12cdffffdafaffffca870000308b0000608b0000ce8c0000d68f00005c900000be900000fc900000
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -877,9 +931,15 @@ MonoBehaviour:
   m_Position:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: {x: 16.371235, y: 22.432255, z: -24.10433}
     speed: 2
     m_Value: {x: 16.371235, y: 22.432255, z: -24.10433}
+=======
+    m_Target: {x: -41.064514, y: -24.48085, z: 244.01324}
+    speed: 2
+    m_Value: {x: -41.064514, y: -24.48085, z: 244.01324}
+>>>>>>> Stashed changes
 =======
     m_Target: {x: -41.064514, y: -24.48085, z: 244.01324}
     speed: 2
@@ -938,6 +998,7 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: {x: 0.34069267, y: -0.26815343, z: 0.10203816, w: 0.8953326}
     speed: 2
     m_Value: {x: 0.34069097, y: -0.2681521, z: 0.102037646, w: 0.8953281}
@@ -945,6 +1006,15 @@ MonoBehaviour:
     m_Target: 2.70115
     speed: 2
     m_Value: 2.70115
+=======
+    m_Target: {x: -0.18587038, y: 0.09329374, z: -0.017790364, w: -0.97803426}
+    speed: 2
+    m_Value: {x: -0.18732607, y: 0.09326139, z: -0.01792925, w: -0.9776962}
+  m_Size:
+    m_Target: 77.56436
+    speed: 2
+    m_Value: 8.86916
+>>>>>>> Stashed changes
 =======
     m_Target: {x: -0.18587038, y: 0.09329374, z: -0.017790364, w: -0.97803426}
     speed: 2
