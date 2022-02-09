@@ -24,6 +24,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject playerController;
     static Rigidbody rb;
     static CharacterLook character;
+    static Player player;
 
     public MenuActions menuControls;
     private InputAction pause;
@@ -45,6 +46,7 @@ public class CanvasManager : MonoBehaviour
 
         character = (CharacterLook)playerController.GetComponent("CharacterLook");
         rb = playerController.GetComponent<Rigidbody>();
+        player = playerController.GetComponent<Player>();
         
         menuControls = new MenuActions();
         PauseGame();
@@ -136,6 +138,11 @@ public class CanvasManager : MonoBehaviour
     public void LeaveGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     public void LoadNextLevel()
