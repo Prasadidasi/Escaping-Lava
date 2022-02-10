@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     CanvasManager canvasManager; 
     static Menu goalmenu;
+    private Rigidbody rb;
 
     void Start()
     {
@@ -43,6 +44,15 @@ public class Player : MonoBehaviour
         if(other.tag == "Lava")
         {
             canvasManager.OpenGameOverMenu();
+        }
+
+        if (other.tag == "F_Platform")
+        {
+            rb = other.gameObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.angularVelocity = Vector3.zero;
+            }
         }
     }
 
