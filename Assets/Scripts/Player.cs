@@ -7,7 +7,13 @@ public class Player : MonoBehaviour
     public event Action deathByFalling;
     public event Action deathByLava;
 
+<<<<<<< HEAD
     CanvasManager canvasManager;
+=======
+    CanvasManager canvasManager; 
+    static Menu goalmenu;
+    private Rigidbody rb;
+>>>>>>> master
 
     void Start()
     {
@@ -41,6 +47,15 @@ public class Player : MonoBehaviour
         if(other.tag == "Lava")
         {
             canvasManager.OpenGameOverMenu();
+        }
+
+        if (other.tag == "F_Platform")
+        {
+            rb = other.gameObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.angularVelocity = Vector3.zero;
+            }
         }
     }
 

@@ -68,7 +68,7 @@ namespace EscapingLava.FPSClimber
         /// </summary>
 
         private InputAction interactInputAction { get; set; }
-
+        public Lava lava;
         #endregion
 
         #region METHODS
@@ -76,6 +76,7 @@ namespace EscapingLava.FPSClimber
         /// <summary>
         /// Extends OnMovementModeChanged to handle our custom movement mode enter / exit.
         /// </summary>
+
 
         protected override void OnMovementModeChanged(MovementMode prevMovementMode, int prevCustomMode)
         {
@@ -305,10 +306,16 @@ namespace EscapingLava.FPSClimber
             interactInputAction = actions.FindAction("Interact");
             if (interactInputAction != null)
             {
-                interactInputAction.started += context => Climb();
-                interactInputAction.canceled += context => StopClimbing();
+                interactInputAction.performed += context => InvertLavaRaise();
             }
         }
+
+        void InvertLavaRaise()
+        {
+            lava.isLavaRising = !lava.isLavaRising;
+            Debug.Log("lava rising is" + lava.isLavaRising);
+        }
+
 
         void OnTriggerEnter(Collider col)
         {
