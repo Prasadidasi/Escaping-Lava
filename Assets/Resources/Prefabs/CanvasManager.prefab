@@ -4635,7 +4635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1132597854630355543
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4670,6 +4670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInt: {fileID: 1691072037755185082}
+  colon: {fileID: 7453097927122506}
   timeLeft: 300
   gameStarted: 0
 --- !u!1 &8926827735771010412

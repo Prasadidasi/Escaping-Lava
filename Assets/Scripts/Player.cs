@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     }
 
 
-    //can use this logic for when falling into lava, "timer-death" is already complete
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "HeliPad") 

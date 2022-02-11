@@ -8,6 +8,7 @@ TagManager:
   - HeliPad
   - Lava
   - F_Platform
+  - JumpTag
   layers:
   - Default
   - TransparentFX
