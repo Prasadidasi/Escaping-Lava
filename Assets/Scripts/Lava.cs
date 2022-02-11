@@ -5,24 +5,33 @@ using UnityEngine;
 public class Lava : MonoBehaviour
 {
     public float speed = 0.0005f;
-
+    public bool isLavaRising = true;
+    private int mask;  
 
     // Start is called before the first frame update
     void Start()
     {
-    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        mask = LayerMask.NameToLayer("Platform");
+    } 
 
     void FixedUpdate()
     {
-        transform.Translate(Vector3.up * speed , Space.World);
+        if (isLavaRising)
+        {
+            transform.Translate(Vector3.up * speed, Space.World);
+        }
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "F_Platform")
+        {
+            Rigidbody rb = other.gameObject.GetComponent < Rigidbody>();
+            if (rb != null)
+            {
+                Debug.Log("Push platform up");
+                other.gameObject.transform.Translate(Vector3.up * speed, Space.World);
+            }
+        }
+    }
 }
