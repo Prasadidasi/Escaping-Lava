@@ -7,11 +7,9 @@ TagManager:
   - Ladder
   - HeliPad
   - Lava
-<<<<<<< HEAD
   - JumpTag
-=======
   - F_Platform
->>>>>>> master
+  - JumpTag
   layers:
   - Default
   - TransparentFX
