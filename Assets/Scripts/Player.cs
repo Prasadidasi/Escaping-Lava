@@ -7,13 +7,9 @@ public class Player : MonoBehaviour
     public event Action deathByFalling;
     public event Action deathByLava;
 
-<<<<<<< HEAD
-    CanvasManager canvasManager;
-=======
     CanvasManager canvasManager; 
     static Menu goalmenu;
     private Rigidbody rb;
->>>>>>> master
 
     void Start()
     {

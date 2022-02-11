@@ -7,7 +7,6 @@ TagManager:
   - Ladder
   - HeliPad
   - Lava
-  - JumpTag
   - F_Platform
   - JumpTag
   layers:
