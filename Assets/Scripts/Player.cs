@@ -7,8 +7,7 @@ public class Player : MonoBehaviour
     public event Action deathByFalling;
     public event Action deathByLava;
 
-    CanvasManager canvasManager; 
-    static Menu goalmenu;
+    CanvasManager canvasManager;
 
     void Start()
     {
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
     }
 
 
-    //can use this logic for when falling into lava, "timer-death" is already complete
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "HeliPad") 
