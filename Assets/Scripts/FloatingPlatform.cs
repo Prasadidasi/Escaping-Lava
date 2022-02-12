@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody))]
 public class FloatingPlatform : MonoBehaviour
-{
-    public float speed = 2f;
-    
+{    
     private Rigidbody rigidBody;
     private bool isTouchingLava = false;
-    void Start()
+    
+    void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        rigidBody.mass = 100;
+        rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     private void Update()
@@ -18,7 +22,7 @@ public class FloatingPlatform : MonoBehaviour
         if (isTouchingLava)
         {
             Debug.Log("It Burns but it floats");
-            rigidBody.AddForce(transform.up * speed);
+            rigidBody.AddForce(transform.up * rigidBody.mass);
         }
     }
 
@@ -37,6 +41,7 @@ public class FloatingPlatform : MonoBehaviour
         if (other.tag == "Lava")
         {
             isTouchingLava = false;
+            rigidBody.velocity = Vector3.zero;
         }
     }
 }

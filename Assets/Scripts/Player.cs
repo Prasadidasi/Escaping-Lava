@@ -45,14 +45,6 @@ public class Player : MonoBehaviour
             canvasManager.OpenGameOverMenu();
         }
 
-        if (other.tag == "F_Platform")
-        {
-            rb = other.gameObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.angularVelocity = Vector3.zero;
-            }
-        }
     }
 
 }
