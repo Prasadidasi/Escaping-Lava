@@ -63,4 +63,9 @@ public class Timer : MonoBehaviour
         }
 
     }
+
+    public void SetTimer(float time)
+    {
+        this.timeLeft = time;
+    }
 }

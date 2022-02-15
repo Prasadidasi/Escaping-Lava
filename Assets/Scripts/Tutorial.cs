@@ -19,11 +19,17 @@ public class Tutorial : MonoBehaviour
     public bool sprintTrigger = false;
     public bool longJumpTrigger = false;
     public bool gauntletTrigger = false;
+    public bool completeTrigger = false;
+
+    bool flag = true;
 
     float timer;
+    static Vector3 startPos;
+    static Quaternion quat = new Quaternion(0, 0, 0, 0);
 
     void Awake()
     {
+        startPos = gauntletTimer.transform.localPosition;
         Instance = this;          
     }
 
@@ -32,8 +38,13 @@ public class Tutorial : MonoBehaviour
     {
         timer += Time.fixedDeltaTime;
 
-        if(timer > 3) welcome.SetActive(true);
-        if(timer >= 8) 
+        if(timer > 3) 
+        {
+            gauntletTimer.transform.localPosition = new Vector3(0f, startPos.y+5000f, 0f);
+            welcome.SetActive(true);
+        }
+
+        if (timer >= 8) 
         {
             welcome.SetActive(false);
             walk.SetActive(true);
@@ -63,8 +74,19 @@ public class Tutorial : MonoBehaviour
             longJump.SetActive(false);
             gauntlet.SetActive(true);
             gauntletTimer.SetActive(true);
-            RectTransform rTrans = gauntletTimer.GetComponent<RectTransform>();
-            //rTrans.position = new Rect(0f, -275f, 0);
+            gauntletTimer.transform.localPosition = startPos;
+            
+            if(flag) 
+            {
+                gauntletTimer.GetComponent<Timer>().SetTimer(60f);
+                flag = false;
+            }
+        }
+
+        if(completeTrigger)
+        {
+            gauntletTimer.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 

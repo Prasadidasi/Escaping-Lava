@@ -33,6 +33,11 @@ public class TutorialTriggers : MonoBehaviour
                 tutorial.gauntletTrigger = true;
                 return;
             }
+            if(trigger == "CompleteTrigger")
+            {
+                tutorial.completeTrigger = true;
+                return;
+            }
                 
                    
         }
