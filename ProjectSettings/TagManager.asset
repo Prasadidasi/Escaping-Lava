@@ -9,6 +9,8 @@ TagManager:
   - Lava
   - F_Platform
   - JumpTag
+  - SliderLava
+  - SliderPlayer
   layers:
   - Default
   - TransparentFX
