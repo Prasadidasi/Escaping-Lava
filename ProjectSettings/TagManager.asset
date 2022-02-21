@@ -11,6 +11,7 @@ TagManager:
   - JumpTag
   - SliderLava
   - SliderPlayer
+  - Settings
   layers:
   - Default
   - TransparentFX

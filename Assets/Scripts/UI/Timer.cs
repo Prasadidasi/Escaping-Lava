@@ -9,23 +9,30 @@ public class Timer : MonoBehaviour
 
     [SerializeField] TMP_Text timeInt;
     [SerializeField] TMP_Text colon;
+    
 
     public float timeLeft = 300;
 
     public bool gameStarted = false;
 
     CanvasManager canvasManager; 
+    Settings settings;
 
     void Start()
     {
         Instance = this;
         canvasManager = GameObject.FindObjectOfType<CanvasManager>();
+        settings = GameObject.FindObjectOfType<Settings>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!gameStarted) return;
+        if(!gameStarted || PlayerPrefs.GetInt("timerDisabled") == 1) 
+        {
+            gameObject.SetActive(false);
+            return;
+        }
 
         gameObject.SetActive(true);
 

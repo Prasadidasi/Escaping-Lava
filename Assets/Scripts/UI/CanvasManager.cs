@@ -10,7 +10,6 @@ public class CanvasManager : MonoBehaviour
 
     [SerializeField] int levelNumber;
 
-    
     public TMP_Text countDownText;
     public float countDownTimer = 6;
     
