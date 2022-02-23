@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public event Action deathByFalling;
-    public event Action deathByLava;
-
     CanvasManager canvasManager; 
     static Menu goalmenu;
     private Rigidbody rb;
@@ -21,18 +18,6 @@ public class Player : MonoBehaviour
         
     }
 
-    void Die()
-    {
-        if (deathByFalling != null)
-            deathByFalling();
-
-        if (deathByLava != null)
-            deathByLava();
-
-        //player death code here
-    }
-
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "HeliPad") 
@@ -45,6 +30,10 @@ public class Player : MonoBehaviour
             GameObject obj = GameObject.FindGameObjectWithTag("Lava");
             Lava lava = (Lava)obj.GetComponent("Lava");
             lava.isLavaRising = false;
+
+            Timer timer = canvasManager.transform.GetChild(4).GetComponent<Timer>();
+            timer.fellInLava = true;
+
             canvasManager.OpenGameOverMenu();
 
         }

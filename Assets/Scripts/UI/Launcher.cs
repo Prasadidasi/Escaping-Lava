@@ -19,6 +19,9 @@ public class Launcher : MonoBehaviour
     {
         Instance = this;
         MenuManager.Instance.OpenMenu("loading");
+        PlayerPrefs.SetInt("Normal", 0); 
+        PlayerPrefs.SetInt("Medium", 0);
+        PlayerPrefs.SetInt("Hard", 0);
     }
 
     void Start()

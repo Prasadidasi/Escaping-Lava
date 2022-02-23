@@ -35,19 +35,19 @@ public class Lava : MonoBehaviour
         if(PlayerPrefs.GetInt("Normal") == 1)
         {
             speed = normal;
-            Debug.Log(speed);
+            Debug.Log("normal speed: " + speed);
         }
         
         else if (PlayerPrefs.GetInt("Medium") == 1)
         {
             speed = medium;
-            Debug.Log(speed);
+            Debug.Log("medium speed: " + speed);
         }
 
         else if (PlayerPrefs.GetInt("Hard") == 1)
         {
             speed = hard;
-            Debug.Log(speed);
+            Debug.Log("hard speed: " + speed);
         }
     }
 }

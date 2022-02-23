@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour
 
     public bool gameStarted = false;
 
+    public bool fellInLava = false;
+
     CanvasManager canvasManager; 
     Settings settings;
 
@@ -25,7 +27,6 @@ public class Timer : MonoBehaviour
         settings = GameObject.FindObjectOfType<Settings>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if(!gameStarted || PlayerPrefs.GetInt("timerDisabled") == 1) 
@@ -34,7 +35,27 @@ public class Timer : MonoBehaviour
             return;
         }
 
+        if(fellInLava)
+        {
+            timeLeft = Time.fixedDeltaTime; 
+            return;
+        }
+        else timeLeft -= Time.fixedDeltaTime;
+
         gameObject.SetActive(true);
+
+        timeInt.text = ShowTimer();
+
+    }
+
+    public void SetTimer(float time)
+    {
+        this.timeLeft = time;
+    }
+
+    public string ShowTimer()
+    {
+        string timerText = null;
 
         if(timeLeft > 0) //tid kvar
         {
@@ -42,11 +63,12 @@ public class Timer : MonoBehaviour
 
             if(timeLeft > 60 ) 
             {
-                timeInt.text = "0" + (int)timeLeft / 60 +"  "+ (int)timeLeft % 60;
+                timerText = "0" + (int)timeLeft / 60 +"  "+ (int)timeLeft % 60;
 
-                if(timeLeft % 60 < 10 ) timeInt.text = "0" + (int)timeLeft / 60 +"  0"+(int)timeLeft % 60;
-
-                return;
+                if(timeLeft % 60 < 10 ) 
+                {
+                    timerText = "0" + (int)timeLeft / 60 +"  0"+(int)timeLeft % 60;
+                }
             }
 
             if(timeLeft < 60 ) // 00:xx
@@ -54,25 +76,16 @@ public class Timer : MonoBehaviour
                 timeInt.color = Color.red;
                 colon.color = Color.red;
 
-                timeInt.text = "00  " + (int)timeLeft;
+                timerText = "00  " + (int)timeLeft;
 
-                if(timeLeft < 10) timeInt.text = "00  0" + (int)timeLeft;
-                
-                return;
-            }
-
-            
+                if(timeLeft < 10) timerText = "00  0" + (int)timeLeft;             
+            }      
         }
 
-        if(timeLeft <= 0)
+        else
         {
-            canvasManager.OpenGameOverMenu();
+            canvasManager.OpenGameOverMenu();           
         }
-
-    }
-
-    public void SetTimer(float time)
-    {
-        this.timeLeft = time;
+        return timerText;
     }
 }
