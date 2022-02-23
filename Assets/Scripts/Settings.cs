@@ -13,27 +13,7 @@ public class Settings : MonoBehaviour
     Toggle lavaToggle;
     Toggle timerToggle;
     
-    void Awake()
-    {
-       //if (settings == null)
-       //{
-       //    DontDestroyOnLoad(gameObject);
-       //    settings = this;
-       //}
-//
-       // else if (settings != this)
-       // {
-       //     Destroy(gameObject);
-       // }
-//
-       // GameObject[] objs = GameObject.FindGameObjectsWithTag("Settings");
 
-       // if (objs.Length > 1)
-       // {
-       //     Destroy(this.gameObject);
-       // }
-        
-    }
 
     void FixedUpdate()
     {

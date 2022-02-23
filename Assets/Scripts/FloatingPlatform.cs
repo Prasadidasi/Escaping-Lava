@@ -21,7 +21,7 @@ public class FloatingPlatform : MonoBehaviour
     {
         if (isTouchingLava)
         {
-            Debug.Log("It Burns but it floats");
+            //Debug.Log("It Burns but it floats");
             rigidBody.AddForce(transform.up * rigidBody.mass);
         }
     }

@@ -30,6 +30,8 @@ public class Launcher : MonoBehaviour
     {
     }    
 
+    
+
     public void LoadLevel(int levelNumber)
     {
         SceneManager.LoadScene(levelNumber);
@@ -52,5 +54,32 @@ public class Launcher : MonoBehaviour
             timerToggle.isOn = true;
         }
     }
+
+    public void checkDifficulty(string difficulty)
+    {
+        if (difficulty.Equals("Normal"))
+        {
+            PlayerPrefs.SetInt("Normal", 1);
+            PlayerPrefs.SetInt("Medium", 0);
+            PlayerPrefs.SetInt("Hard", 0);
+        }
+        else if (difficulty.Equals("Medium"))
+        {
+            PlayerPrefs.SetInt("Medium", 1);
+            PlayerPrefs.SetInt("Normal", 0); 
+            PlayerPrefs.SetInt("Hard", 0);
+        }
+        else if (difficulty.Equals("Hard"))
+        {
+            PlayerPrefs.SetInt("Hard", 1);
+            PlayerPrefs.SetInt("Medium", 0);
+            PlayerPrefs.SetInt("Normal", 0);
+
+        }
+
+        LoadLevel(2);
+
+    }
+
 }
 

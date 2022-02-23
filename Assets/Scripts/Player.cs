@@ -42,7 +42,11 @@ public class Player : MonoBehaviour
         
         if(other.tag == "Lava")
         {
+            GameObject obj = GameObject.FindGameObjectWithTag("Lava");
+            Lava lava = (Lava)obj.GetComponent("Lava");
+            lava.isLavaRising = false;
             canvasManager.OpenGameOverMenu();
+
         }
 
     }
