@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)

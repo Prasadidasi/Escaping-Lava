@@ -1,4 +1,5 @@
 ﻿using ECM2.Characters;
+using ECM2.Components;
 using ECM2.Examples.Gameplay.LadderClimbExample;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -76,6 +77,23 @@ namespace EscapingLava.FPSClimber
         /// <summary>
         /// Extends OnMovementModeChanged to handle our custom movement mode enter / exit.
         /// </summary>
+
+        protected override void OnGroundHit(ref GroundHit prevGroundHit, ref GroundHit groundHit)
+        {
+            base.OnGroundHit(ref prevGroundHit, ref groundHit);
+            //Debug.Log("Hit Ground " + groundHit.collider.name);
+        }
+
+        protected override void OnLanded()
+        {
+            base.OnLanded();
+            Debug.Log("Eagle has Landed");
+        }
+
+        protected override void OnJumped()
+        {
+            base.OnJumped();
+        }
 
 
         protected override void OnMovementModeChanged(MovementMode prevMovementMode, int prevCustomMode)
