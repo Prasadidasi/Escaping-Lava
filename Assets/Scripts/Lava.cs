@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    private float speed;
+    public float speed;
     public bool isLavaRising = true;
 
-    static float normal = 0.00005f;
-    static float medium = 0.0005f;
+    static float normal = 0.0015f;
+    static float medium = 0.0028f;
     static float hard = 0.005f;
 
     Settings settings;
 
-    // Start is called before the first frame update
     void Awake()
     {
         //mask = LayerMask.NameToLayer("Platform"); 
+        //speed = normal;
         SetSpeed();
     } 
 
@@ -32,6 +32,8 @@ public class Lava : MonoBehaviour
 
     public void SetSpeed()
     {
+        speed = normal;
+
         if(PlayerPrefs.GetInt("Normal") == 1)
         {
             speed = normal;
@@ -49,5 +51,11 @@ public class Lava : MonoBehaviour
             speed = hard;
             Debug.Log("hard speed: " + speed);
         }
+       // else
+       // {
+       //     speed = normal; //default
+       //     Debug.Log("default speed: " + speed);
+       // }
+        
     }
 }
