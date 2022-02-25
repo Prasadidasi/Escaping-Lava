@@ -27,7 +27,7 @@ public class DistanceToHeli : MonoBehaviour
     void Update()
     {
         DistanceTravelled();
-        distance.text = "Distance to helicopter: " + distanceUnit.ToString("F1") + " m.";
+        distance.text = "Distance to helicopter: " + distanceUnit.ToString("F1") + " m";
         Debug.Log("Distance: " + distanceUnit);
     }
 

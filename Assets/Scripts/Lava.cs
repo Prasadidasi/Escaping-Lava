@@ -51,11 +51,7 @@ public class Lava : MonoBehaviour
             speed = hard;
             Debug.Log("hard speed: " + speed);
         }
-       // else
-       // {
-       //     speed = normal; //default
-       //     Debug.Log("default speed: " + speed);
-       // }
+
         
     }
 }

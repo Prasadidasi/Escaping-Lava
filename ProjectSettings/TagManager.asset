@@ -12,6 +12,7 @@ TagManager:
   - SliderLava
   - SliderPlayer
   - Settings
+  - Vignette
   layers:
   - Default
   - TransparentFX
