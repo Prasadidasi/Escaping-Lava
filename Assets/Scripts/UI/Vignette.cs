@@ -5,6 +5,7 @@ using UnityEngine;
 public class Vignette : MonoBehaviour
 {
     private static Vignette Instance;
+    [SerializeField] GameObject vignette;
 
     void Start()
     {
@@ -19,8 +20,9 @@ public class Vignette : MonoBehaviour
         
         if ( distance < 7 )
         {
-            GameObject.FindGameObjectWithTag("Vignette").SetActive(true);
+            vignette.SetActive(true);
         }
+        else vignette.SetActive(false);
 
     }
 }

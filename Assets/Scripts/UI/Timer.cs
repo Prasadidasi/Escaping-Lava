@@ -11,20 +11,25 @@ public class Timer : MonoBehaviour
     [SerializeField] TMP_Text colon;
     
 
-    public float timeLeft = 300;
+    private float timeLeft  = 180;
+    private float normal    = 180; //3.00
+    private float medium    = 150; //2.30
+    private float hard      = 90;  //1.30
 
     public bool gameStarted = false;
 
     public bool fellInLava = false;
 
-    CanvasManager canvasManager; 
-    Settings settings;
+    static Vector3 startPos;
+
+    CanvasManager canvasManager;
 
     void Start()
     {
         Instance = this;
         canvasManager = GameObject.FindObjectOfType<CanvasManager>();
-        settings = GameObject.FindObjectOfType<Settings>();
+        startPos = transform.localPosition;
+        timerDiff();
     }
 
     void FixedUpdate()
@@ -40,7 +45,6 @@ public class Timer : MonoBehaviour
             timeLeft = Time.fixedDeltaTime; 
             return;
         }
-        else timeLeft -= Time.fixedDeltaTime;
 
         gameObject.SetActive(true);
 
@@ -51,6 +55,24 @@ public class Timer : MonoBehaviour
     public void SetTimer(float time)
     {
         this.timeLeft = time;
+    }
+
+    public void timerDiff()
+    {
+        if(PlayerPrefs.GetInt("Normal") == 1)
+        {
+            timeLeft = normal;
+        }
+        
+        else if (PlayerPrefs.GetInt("Medium") == 1)
+        {
+            timeLeft = medium;
+        }
+
+        else if (PlayerPrefs.GetInt("Hard") == 1)
+        {
+            timeLeft = hard;
+        }
     }
 
     public string ShowTimer()
@@ -79,7 +101,13 @@ public class Timer : MonoBehaviour
                 timerText = "00  " + (int)timeLeft;
 
                 if(timeLeft < 10) timerText = "00  0" + (int)timeLeft;             
-            }      
+            }  
+
+            if(timeLeft <= 10)
+            {
+                transform.localPosition = new Vector3(0f, startPos.y - 275f, 0f);
+                transform.localScale = new Vector3(2, 2, 1);
+            }
         }
 
         else
