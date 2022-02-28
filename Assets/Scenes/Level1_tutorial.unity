@@ -10988,6 +10988,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4737365782299246, guid: adb55fed5a5012b458c398a0b618390c, type: 3}
   m_PrefabInstance: {fileID: 684256929}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &685620565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685620567}
+  - component: {fileID: 685620566}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &685620566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685620565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6d2815443080b44ba17c25e7ad076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioName: Concrete
+    clip: {fileID: 8300000, guid: 7f1e61de23118404d89276ff235fb423, type: 3}
+    loop: 0
+    volume: 0.35
+    pitch: 0.48
+    source: {fileID: 0}
+  - audioName: Metal
+    clip: {fileID: 8300000, guid: 6b3a40accfd67444caad76d566841296, type: 3}
+    loop: 0
+    volume: 0.719
+    pitch: 0.652
+    source: {fileID: 0}
+  - audioName: Flame_Whoosh
+    clip: {fileID: 8300000, guid: e76abd76ce2a9ac4c99f9d4ba50ae9c1, type: 3}
+    loop: 0
+    volume: 0.872
+    pitch: 0.534
+    source: {fileID: 0}
+  - audioName: Victory
+    clip: {fileID: 8300000, guid: e68c99aa9ebf0da4f86d3877625028dd, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - audioName: Death
+    clip: {fileID: 8300000, guid: 14694d7f0ff6af743a1f9e7a88044a41, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - audioName: Jump
+    clip: {fileID: 8300000, guid: 15c75e6c06371174b8a86a9d377f174e, type: 3}
+    loop: 0
+    volume: 0.422
+    pitch: 0.543
+    source: {fileID: 0}
+--- !u!4 &685620567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685620565}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.35909, y: -5.4533844, z: -17.117157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &687674286
 PrefabInstance:
   m_ObjectHideFlags: 0
