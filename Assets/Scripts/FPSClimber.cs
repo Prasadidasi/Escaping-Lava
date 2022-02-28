@@ -87,7 +87,6 @@ namespace EscapingLava.FPSClimber
         protected override void OnLanded()
         {
             base.OnLanded();
-            GameObject.FindObjectOfType<AudioManager>().Play("Concrete");
         }
 
         protected override void OnJumped()
