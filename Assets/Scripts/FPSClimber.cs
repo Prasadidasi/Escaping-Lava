@@ -87,12 +87,13 @@ namespace EscapingLava.FPSClimber
         protected override void OnLanded()
         {
             base.OnLanded();
-            Debug.Log("Eagle has Landed");
+            GameObject.FindObjectOfType<AudioManager>().Play("Concrete");
         }
 
         protected override void OnJumped()
         {
             base.OnJumped();
+            GameObject.FindObjectOfType<AudioManager>().Play("Jump");
         }
 
 

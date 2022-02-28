@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    CanvasManager canvasManager; 
+    CanvasManager canvasManager;
     static Menu goalmenu;
     private Rigidbody rb;
 
@@ -22,11 +22,13 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "HeliPad") 
         {
+            GameObject.FindObjectOfType<AudioManager>().Play("Victory");
             canvasManager.LevelComplete();
         }
         
         if(other.tag == "Lava")
         {
+            GameObject.FindObjectOfType<AudioManager>().Play("Death");
             GameObject obj = GameObject.FindGameObjectWithTag("Lava");
             Lava lava = (Lava)obj.GetComponent("Lava");
             lava.isLavaRising = false;
